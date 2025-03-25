@@ -1,4 +1,4 @@
-name: Python CI
+name: YOLO Object Detection CI
 
 on:
   push:
@@ -23,15 +23,13 @@ jobs:
       with:
         python-version: '3.9'
 
-    # 3. Abhängigkeiten installieren (falls benötigt)
+    # 3. Abhängigkeiten installieren
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Hier kannst du weitere Abhängigkeiten installieren, z.B.:
-        # pip install -r requirements.txt
+        pip install ultralytics opencv-python matplotlib
 
     # 4. Tests ausführen
     - name: Run tests
       run: |
         python -m unittest discover
-
